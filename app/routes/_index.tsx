@@ -1,4 +1,16 @@
-import type { MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { Outlet } from "@remix-run/react";
+import { AppBar } from "~/components/AppBar";
+import { ContextProvider } from "~/contexts/ContextProvider";
+import walletstylesUrl from "@solana/wallet-adapter-react-ui/styles.css?url";
+import stylesUrl from "~/styles/globals.css?url";
+
+export const links: LinksFunction = () => {
+  return [
+    { rel: "stylesheet", href: walletstylesUrl },
+    { rel: "stylesheet", href: stylesUrl },
+  ];
+};
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,6 +22,13 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
+      <ContextProvider>
+        <div className="flex flex-col h-screen">
+          <AppBar />
+          <Outlet />
+        </div>
+      </ContextProvider>
+
       <h1>Welcome to Remix</h1>
       <ul>
         <li>

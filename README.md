@@ -1,4 +1,6 @@
-# Welcome to Remix + Vite!
+# Welcome to Remix Solana Wallet!
+
+A simple Solana wallet connection example, implemented based on @solana/wallet-adapter
 
 📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
 
@@ -7,7 +9,7 @@
 Run the Vite dev server:
 
 ```shellscript
-npm run dev
+bun run dev
 ```
 
 ## Deployment
@@ -15,13 +17,13 @@ npm run dev
 First, build your app for production:
 
 ```sh
-npm run build
+bun run build
 ```
 
 Then run the app in production mode:
 
 ```sh
-npm start
+bun start
 ```
 
 Now you'll need to pick a host to deploy it to.
